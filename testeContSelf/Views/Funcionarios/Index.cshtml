@@ -1,0 +1,60 @@
+﻿@model IEnumerable<testeContSelf.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sistema de Teste ContSelf</h1>
+
+<br />
+<form class="form-inline my-2 my-lg-0" asp-action="Pesquisa">
+    <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar funcionário" name="id">
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+</form>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atividades)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Atividades)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CodFuncionario">Editar</a>
+                    <span> - </span>
+                    <a asp-action="Delete" asp-route-id="@item.CodFuncionario">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-primary" asp-action="Create">Novo funcionário</a>
+</p>

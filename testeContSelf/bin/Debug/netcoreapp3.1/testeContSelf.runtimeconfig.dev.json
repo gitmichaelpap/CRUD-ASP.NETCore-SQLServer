@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\sppaz\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\sppaz\\.nuget\\packages"
+    ]
+  }
+}
